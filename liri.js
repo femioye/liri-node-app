@@ -1,14 +1,19 @@
 require("dotenv").config();
 
 
-//Data taken from keys.js
+// Data taken from keys.js
 var keys = require('./keys.js');
+
 var request = require('request');
 var twitter = require('twitter');
 var spotify = require('spotify');
+var fs = require('fs');
+
+// Load the user Spotify and Twitter keys
+
 var spotify = new Spotify(keys.spotify);
 var client = new twitter(keys.twitterKeys);
-var fs = require('fs');
+
 
 
 console.log("keys " + keys.twitter.consumer_key);
@@ -21,7 +26,7 @@ console.log("keys " + keys.spotify.secret);
 
 //Stored argument's array
 var actionArgv = process.argv;
-var liriCommand = actionArgv[2];
+var liriCommand = process.argv[2];
 
 
 //Switch case statement
@@ -33,15 +38,15 @@ switch (liriCommand) {
 
     case "spotify-this-song":
         spotify();
-        break;;
+        break;
 
     case "movie-this":
-        movie();
-        break;;
+        movies();
+        break;
 
     case "do-what-it-says":
-        doWhat();
-        break;;
+        itSays();
+        break;
 }
 
 function tweets() {
@@ -52,10 +57,10 @@ function spotify() {
     console.log("spotify function");
 }
 
-function movie() {
-    console.log("movie");
+function movies() {
+    console.log("movies");
 }
 
-function doWhat() {
-    console.log("do-what function");
+function itSays() {
+    console.log("it-says function");
 }
