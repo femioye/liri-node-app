@@ -51,7 +51,6 @@ switch(action) {
 }
 
 function tweets() {
-    //Display last 20 Tweets
     var screenName = { screen_name: 'cooljay4reel' };
     client.get('statuses/user_timeline', screenName, function (error, tweets, response) {
         if (!error) {
