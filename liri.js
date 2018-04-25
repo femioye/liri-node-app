@@ -58,10 +58,11 @@ function tweets() {
                 var date = tweets[i].created_at;
                 console.log("@cooljay4reel: " + tweets[i].text + " Created At: " + date.substring(0, 19));
             }
-            console.log('Error');
-        }
-    });
-}
+        } else {
+                console.log('Error');
+               }
+        });
+    }
 
 function spotify() {
 
